@@ -16,6 +16,7 @@
 	type DecoderObject<a> = {[t in keyof a]: Decoder<a[t]>}
 	
 	decoder.map(f)
+	decoder.then(f)
 	decoder.run(json)
 	decoder.runThen(json, onOk, onErr)
 */

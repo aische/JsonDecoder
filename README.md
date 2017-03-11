@@ -17,7 +17,7 @@ ts version 2.1.6, with options --strictNullChecks, --noImplicitAny, --noFallthro
         optionalBoolean?: boolean
     };
 
-    const decodeSomeDataType = Json.object({
+    const decodeSomeDataType = Json.object<SomeDataType>({
         id: Json.string,
         name: Json.object({
             firstname: Json.string,

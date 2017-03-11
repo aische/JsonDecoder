@@ -2,6 +2,10 @@
 
 ts version 2.1.6, with options --strictNullChecks, --noImplicitAny, --noFallthroughCasesInSwitch
 
+#### Example
+
+    import * as Json from "./JsonDecoder";
+
     type SomeDataType = {
         id: string,
         name: {
@@ -44,7 +48,7 @@ ts version 2.1.6, with options --strictNullChecks, --noImplicitAny, --noFallthro
     }));
 
 
-Combinators:
+#### Combinators
 
     string : Decoder<string>
     

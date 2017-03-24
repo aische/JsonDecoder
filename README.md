@@ -63,6 +63,8 @@ ts version 2.1.6, with options --strictNullChecks, --noImplicitAny, --noFallthro
     isnull: <a>(defaultValue:a): Decoder<a>
     
     isundefined: <a>(defaultValue:a): Decoder<a>
+
+    isexactly: <a>(value:a): Decoder<a>
     
     array: (decoder: Decoder<a>): Decoder<Array<a>>
     

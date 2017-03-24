@@ -258,3 +258,15 @@ export const constant = <a>(value:a): Decoder<a> => {
 };
 
 
+export function isexactly <a>(value:a): Decoder<a> {
+	return new Decoder(
+		(json:any) => {
+			if (json === value) {
+				return ok<a>(value);
+			} else {
+				return err<a>("is not exactly '" + value + "': " + JSON.stringify(json));
+			}
+		}
+	);
+}
+

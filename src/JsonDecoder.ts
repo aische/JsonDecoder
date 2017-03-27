@@ -132,11 +132,13 @@ export function object <a>(decoders: DecoderObject<a>): Decoder<a> {
 			if ((json !== null) && (typeof json == "object")) {
 				let result : any = {};
 				for(let key in decoders) {
-					let r = decoders[key].run(json[key]);
-					if (r.ok == true) {					
-						result[key] = r.result;
-					} else {
-						return err<a>("at key " + key + ": " + r.error);
+					if (decoders.hasOwnProperty(key)) {
+						let r = decoders[key].run(json[key]);
+						if (r.ok == true) {					
+							result[key] = r.result;
+						} else {
+							return err<a>("at key " + key + ": " + r.error);
+						}
 					}
 				}
 				return ok<a>(result);
@@ -193,11 +195,13 @@ export const keyValues = <a>(decoder: Decoder<a>): Decoder<{[name:string]: a}> =
 			if ((json !== null) && (typeof json === "object")) {
 				let obj : {[name:string]: a} = {};
 				for (let key in json) {
-					let r = decoder.run(json[key]);
-					if (r.ok == true) {					
-						obj[key] = r.result;
-					} else {
-						return err<{[name:string]: a}>(r.error);
+					if (json.hasOwnProperty(key)) {
+						let r = decoder.run(json[key]);
+						if (r.ok == true) {					
+							obj[key] = r.result;
+						} else {
+							return err<{[name:string]: a}>(r.error);
+						}
 					}
 				}
 				return ok<{[name:string]: a}>(obj);

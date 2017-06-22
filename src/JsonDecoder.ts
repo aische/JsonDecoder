@@ -51,6 +51,17 @@ export class Decoder<a> {
 		}
 	}
 
+	runPromise<b>(json : any) : Promise<a> { 
+		return new Promise<a>((resolve, reject) => { 
+    		let r = this.run(json);
+			if (r.ok == true) {
+				return resolve(r.result);
+			} else {
+				return reject(r.error);		
+			}
+		});
+	}
+
 	map <b>(f: (value:a) => b): Decoder<b> {
 		return new Decoder<b>(
 			(json:any) => {

@@ -10,7 +10,13 @@ export const decodeUser : Json.Decoder<User> = Json.object<User>({
 });
 
 export function test():void {
-	console.log("decodeUser user_json", decodeUser.run(user_json));
-	console.log("decodeUser user_json_invalid", decodeUser.run(user_json_invalid));
+	decodeUser.runPromise(user_json).then((res) => {
+		return console.log("decodeUser user_json", res);	
+	});
+	decodeUser.runPromise(user_json_invalid).then((res) => {
+		return console.log("decodeUser user_json_invalid", res);	
+	}).catch((rej) => {
+		return console.log("rejected: decodeUser user_json_invalid", rej);	
+	})
 }
 

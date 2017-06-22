@@ -1,0 +1,22 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "JsonDecoder",
+  "main": "main.ts",
+  "directories": {
+    "example": "examples"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/core-js": "0.9.36"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "json",
+    "decoder"
+  ],
+  "author": "daniel van den eijkel",
+  "license": "BSD-3-Clause"
+}

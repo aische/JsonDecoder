@@ -12,5 +12,3 @@ export function test():void {
   Sums.test();
   Session.test();
 }
-
-test();

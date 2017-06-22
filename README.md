@@ -5,8 +5,11 @@ ts version 2.2.1
 #### running the examples
 
 cd src
+
 npm install
+
 tsc main.ts
+
 node main.js
 
 

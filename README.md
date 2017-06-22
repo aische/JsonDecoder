@@ -1,6 +1,14 @@
 # JsonDecoder for Typescript 
 
-ts version 2.1.6, with options --strictNullChecks, --noImplicitAny, --noFallthroughCasesInSwitch
+ts version 2.2.1
+
+#### running the examples
+
+cd src
+npm install
+tsc main.ts
+node main.js
+
 
 #### Example
 
@@ -87,3 +95,6 @@ ts version 2.1.6, with options --strictNullChecks, --noImplicitAny, --noFallthro
     decoder.run(json)
     
     decoder.runThen(json, onOk, onErr)
+
+    decoder.runPromise(json) : Promise<a>
+    
